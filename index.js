@@ -61,7 +61,7 @@ For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainb
 
 // function addFlavor(arr, flav){
 //    arr.unshift(flav);
-//     console.log(arr)
+//     console.log(arr);
    
 
 // }
@@ -80,10 +80,9 @@ For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", 
 
 //REMOVE FROM END OF ARRAY
 // function removeLastFlavor(arr){
-//     arr.pop;
+//     arr.pop();
 //     console.log(arr);
-//     /*code here*/
-
+//     
 // }
 // removeLastFlavor(originalFlavors);
 /* Task 4: Write a function that returns a flavor at a given index in the array.
@@ -139,7 +138,7 @@ and should return a new array that is identical to the old array. You can name t
 //     newarr = [...arr];
 //     console.log(newarr);
 
-//     /*code here*/
+//     
 
 // }
 // newlist(newFlavors, originalFlavors);
@@ -168,12 +167,12 @@ hint - you can use the .includes method to help you solve this */
 //         }
 
 
-//     /*code here*/
+   
 
 // }
-// 
+
 // }
-// filterByWord(originalFlavors, 'Chocolate');
+// (filterByWord(originalFlavors, 'Chocolate'));
 
 
 
@@ -276,17 +275,21 @@ var regionalFlavors = ["Pink Bubblegum",
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"]
 //RANDOMLY SELECT 31 FLAVORS
-function getRandomFlavors(arr1, arr2, arr3, arr4){
-    randomList = [];
-        for (let i =0; i<7; I++){
-           { if(arr1.)
-        
-           }
-           
-           console.log(randomList);
-        }
+function getRandomFlavors(arrayOne,arrayTwo,arrayThree,arrayFour) {
+    randomFlavors = [];
+    const bigList = arrayOne.concat(arrayTwo).concat(arrayThree).concat(arrayFour);
+    const getRandomInt = function(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+    for (let i = 0; i < 31; i++) {
+        const randomPick = bigList[getRandomInt(0,bigList.length -1)];
+        bigList.splice(randomPick,1);
+        randomFlavors.unshift(randomPick);
     }
-    
-getRandomFlavors(newFlavors, seasonalFlavors, regionalFlavors, originalFlavors)
+    console.log(randomFlavors);
+}
+getRandomFlavors(originalFlavors,regionalFlavors,seasonalFlavors,newFlavors);
    
 
